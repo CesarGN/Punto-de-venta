@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 
 public class Principal extends javax.swing.JFrame {
 
-    boolean cliente,usuario;
+    boolean cliente,usuario,producto;
     
 
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        cliente = usuario= false;
+        cliente = usuario=producto= false;
 
     }
 
@@ -383,6 +383,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Principal/inventario.png"))); // NOI18N
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                click(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(5, 0, 0));
@@ -548,6 +553,16 @@ public class Principal extends javax.swing.JFrame {
             new Usuario_vista(this).setVisible(true);
         }
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void click(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_click
+         if (producto) {
+            JOptionPane.showMessageDialog(null, "YA SE TIENE UNA VENTANA ABIERTA");
+        } else {
+            JOptionPane.showMessageDialog(null, "AQUI VA CONTRASEÑA DEL ADMIN PARA ACCEDER");
+            this.producto=true;
+            new Producto_vista(this).setVisible(true);
+        }
+    }//GEN-LAST:event_click
 
     public static void main(String args[]) {
 

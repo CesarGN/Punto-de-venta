@@ -26,7 +26,6 @@ public class Usuario_controlador extends Modelo {
                 + "   ', delegacion='" + datos[9] + "', cp='" + datos[10] + "', id_tipo_usuario=" + datos[12] + ", \n"
                 + "       telefono='" + datos[13] + "', email='" + datos[14] + "', estatus=" + Boolean.parseBoolean(datos[11]) + "\n"
                 + " WHERE id_usuario=" + datos[0] + " ;";
-        System.out.println(sql);
         this.Update(sql,tabla , "USUARIO ACTUALIZADO");
 
     }
