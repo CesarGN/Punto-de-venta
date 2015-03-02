@@ -15,6 +15,7 @@ public class Cliente_vista extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.principal = principal;
         cc = new Cliente_controlador();
+       
         this.alta_baja = 0;
         //agregar tipos de cliente
         String[][] datos = cc.Select("select tipo from tipo_cliente;", 1);
